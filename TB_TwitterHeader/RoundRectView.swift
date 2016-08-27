@@ -9,7 +9,6 @@
 @IBDesignable class RoundRectView: UIView {
     
     @IBInspectable var cornerRadius: CGFloat = 0.0
-    @IBInspectable var borderColor: UIColor = UIColor.blackColor()
     @IBInspectable var borderWidth: CGFloat = 0.5
     @IBInspectable var shadowOpacity: Float = 0.4
     private var customBackgroundColor = UIColor.whiteColor()
@@ -45,7 +44,7 @@
         
         let borderRect = CGRectInset(bounds, borderWidth/2, borderWidth/2)
         let borderPath = UIBezierPath(roundedRect: borderRect, cornerRadius: cornerRadius - borderWidth/2)
-        borderColor.setStroke()
+        borderColor!.setStroke()
         borderPath.lineWidth = borderWidth
         borderPath.stroke()
         
@@ -53,7 +52,6 @@
     }
     
     func setShadowAlpha(alpha: CGFloat){
-        print("///// setShadowAlpha :::::   \(alpha)")
         layer.shadowColor = UIColor.blackColor().CGColor;
         layer.shadowOffset = CGSize(width: 0, height: 1);
         layer.shadowRadius = 1.0;

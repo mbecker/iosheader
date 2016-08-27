@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D14324521D71CC7C00FF7F55 /* UIViewWithBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14324511D71CC7C00FF7F55 /* UIViewWithBorders.swift */; };
 		D15B9CE61D70F5FD00B3EE49 /* IconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15B9CE51D70F5FD00B3EE49 /* IconImageView.swift */; };
 		D15B9CE81D70F84D00B3EE49 /* RoundRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15B9CE71D70F84D00B3EE49 /* RoundRectView.swift */; };
 		DA28BEBB1A5F023100D8F599 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28BEBA1A5F023100D8F599 /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D14324511D71CC7C00FF7F55 /* UIViewWithBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewWithBorders.swift; sourceTree = "<group>"; };
 		D15B9CE51D70F5FD00B3EE49 /* IconImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImageView.swift; sourceTree = "<group>"; };
 		D15B9CE71D70F84D00B3EE49 /* RoundRectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRectView.swift; sourceTree = "<group>"; };
 		DA28BEB51A5F023100D8F599 /* TB_TwitterHeader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TB_TwitterHeader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,7 @@
 				DABC18CC1A618ED800D69C9E /* FXBlurView.m */,
 				D15B9CE51D70F5FD00B3EE49 /* IconImageView.swift */,
 				D15B9CE71D70F84D00B3EE49 /* RoundRectView.swift */,
+				D14324511D71CC7C00FF7F55 /* UIViewWithBorders.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D14324521D71CC7C00FF7F55 /* UIViewWithBorders.swift in Sources */,
 				DA28BEDB1A5F385F00D8F599 /* AvatarImageView.swift in Sources */,
 				DABC18BA1A61767B00D69C9E /* TWTButton.swift in Sources */,
 				DABC18CD1A618ED800D69C9E /* FXBlurView.m in Sources */,

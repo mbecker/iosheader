@@ -33,15 +33,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var header:UIView!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var sizerView: UIView!
-    @IBOutlet weak var headerMapIcon: UIImageView!
-    @IBOutlet weak var headerFilterIcon: UIImageView!
+    
+    
+    
+    @IBOutlet weak var headerMapIcon: RoundRectView!
+    @IBOutlet weak var headerFilterIcon: RoundRectView!
     @IBOutlet weak var headerCameraIcon: RoundRectView!
+    
+    
     @IBOutlet weak var headerImage0: UIImageView!
     
     
     var headerBlurImageView:UIImageView!
     
-//    var headerImageView:UIImageView?
     var blurredHeaderImageView:UIImageView?
     var headerNavBarImage:UIImageView?
     var headerNavBarImageShadow:UIImageView?
@@ -59,36 +63,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidAppear(animated: Bool) {
         
         sizerView.backgroundColor = UIColor.clearColor()
-        
-        // Header - Image
-        
-//        headerImageView = UIImageView(frame: header.bounds)
-//        headerImageView?.image = UIImage(named: "bg-header")
-//        headerImageView?.contentMode = UIViewContentMode.ScaleAspectFill
-//        header.insertSubview(headerImageView!, belowSubview: headerLabel)
-//        headerImageView?.layer.zPosition = -1
-//        self.view.bringSubviewToFront(avatarImage)
-//        self.view.bringSubviewToFront(headerMapIcon)
-//        self.view.bringSubviewToFront(headerFilterIcon)
-        
-        // Header - Blurred Image
-        
-//        headerBlurImageView                         = UIImageView(frame: header.bounds)
-//        headerBlurImageView?.image                  = UIImage(named: "bg-addo")?.blurredImageWithRadius(10, iterations: 20, tintColor: UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00))
-//        headerBlurImageView?.contentMode            = UIViewContentMode.ScaleAspectFill
-//        headerBlurImageView?.alpha                  = 0.0
-//        
-//        headerNavBarImage                           = UIImageView(frame: CGRect(x: 0, y: 0, width: header.frame.width, height: header.frame.height - 1))
-//        headerNavBarImage?.backgroundColor          = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
-//        headerNavBarImage?.alpha                    = 0.0
-//        
-//        headerNavBarImageShadow                     = UIImageView(frame: header.bounds)
-//        headerNavBarImageShadow!.backgroundColor    = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1.00)
-//        headerNavBarImageShadow!.alpha              = 0.0
-//        
-//        header.insertSubview(headerBlurImageView, belowSubview: headerImage0)
-//        header.insertSubview(headerNavBarImage!, belowSubview: headerImage0)
-//        header.insertSubview(headerNavBarImageShadow!, belowSubview: headerImage0)
         
         header.clipsToBounds = true
     }
@@ -124,47 +98,36 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             headerTransform = CATransform3DTranslate(headerTransform, 0, max(-offset_HeaderStop, -offset), 0)
             
             
-            //  ------------ Label
+            //  ------------ Transformation
             
-            let labelTransform = CATransform3DMakeTranslation(0, max(-(centerNavBar + 21.5 ), offset_B_LabelHeader - 21.5 - offset), 0)
+            // - Label Transformation
+            
+            let labelTransform = CATransform3DMakeTranslation(0, max(-(centerNavBar + 25 ), offset_B_LabelHeader - 20 - offset), 0)
             headerLabel.layer.transform = labelTransform
             
             
-            // ToDo: Why "18 / 2"?
-            let iconTransform = CATransform3DMakeTranslation(0, max(-(centerNavBar - 18 / 2 ), offset_HeaderStop - offset), 0)
+            // - Icon transformation
+            //      ToDo: Why "-6"?
+            
+            let iconTransform = CATransform3DMakeTranslation(0, max(-(centerNavBar - 6 ), offset_HeaderStop - offset), 0)
+            let iconAlpha = 1 - min(1, min(0, offset_HeaderStop - offset) / -(centerNavBar - 6 / 2 ))
+            
             headerMapIcon.layer.transform       = iconTransform
             headerFilterIcon.layer.transform    = iconTransform
             headerCameraIcon.layer.transform    = iconTransform
-            headerCameraIcon.setShadowAlpha(1 - min(1, min(0, offset_HeaderStop - offset) / -(centerNavBar - 18 / 2 )))
+            
+            
+            headerMapIcon.setShadowAlpha(iconAlpha)
+            headerFilterIcon.setShadowAlpha(iconAlpha)
+            headerCameraIcon.setShadowAlpha(iconAlpha)
+            
+            // - Header Image transformation
             
             if offset > 300 - 66 {
+                // Only move header image when the navbar reaches top
                 let headerImageTransform = CATransform3DMakeTranslation(0, max(-66, 300 - 66 - offset), 0)
                 headerImage0.layer.transform    = headerImageTransform
-                
-                // ---- PRINT
-                print("----------")
-                print("offset                       -   \(offset)")
-                print("max(-66, 300 - 66 - offset)  -   \(max(-66, 300 - 66 - offset))")
             }
-            
-            
-            
-            
-            
-            //  ------------ Blur
-            
-            let imageAlpha:CGFloat = 1 - min (1.0, -((offset - offset_B_LabelHeader)/offset_B_LabelHeader * 1.5))
-//            headerBlurImageView?.alpha = min (1.0, (offset - offset_B_LabelHeader)/distance_W_LabelHeader)
-//            headerBlurImageView?.alpha      = imageAlpha
-            
-//            if(offset > offset_HeaderStop){
-//                headerNavBarImage?.alpha        = 1
-//                headerNavBarImageShadow!.alpha  = 1
-//            } else {
-//                headerNavBarImage?.alpha        = 0
-//                headerNavBarImageShadow!.alpha  = 0
-//            }
-            
             
 
             // Avatar -----------
