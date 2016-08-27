@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DA28BEB41A5F023100D8F599"
-               BuildableName = "TB_TwitterHeader.app"
-               BlueprintName = "TB_TwitterHeader"
-               ReferencedContainer = "container:TB_TwitterHeader.xcodeproj">
+               BuildableName = "iOSHeader.app"
+               BlueprintName = "iOSHeader"
+               ReferencedContainer = "container:iOSHeader.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DA28BEB41A5F023100D8F599"
-            BuildableName = "TB_TwitterHeader.app"
-            BlueprintName = "TB_TwitterHeader"
-            ReferencedContainer = "container:TB_TwitterHeader.xcodeproj">
+            BuildableName = "iOSHeader.app"
+            BlueprintName = "iOSHeader"
+            ReferencedContainer = "container:iOSHeader.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DA28BEB41A5F023100D8F599"
-            BuildableName = "TB_TwitterHeader.app"
-            BlueprintName = "TB_TwitterHeader"
-            ReferencedContainer = "container:TB_TwitterHeader.xcodeproj">
+            BuildableName = "iOSHeader.app"
+            BlueprintName = "iOSHeader"
+            ReferencedContainer = "container:iOSHeader.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DA28BEB41A5F023100D8F599"
-            BuildableName = "TB_TwitterHeader.app"
-            BlueprintName = "TB_TwitterHeader"
-            ReferencedContainer = "container:TB_TwitterHeader.xcodeproj">
+            BuildableName = "iOSHeader.app"
+            BlueprintName = "iOSHeader"
+            ReferencedContainer = "container:iOSHeader.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -24,7 +24,7 @@
 		D14324511D71CC7C00FF7F55 /* UIViewWithBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewWithBorders.swift; sourceTree = "<group>"; };
 		D15B9CE51D70F5FD00B3EE49 /* IconImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImageView.swift; sourceTree = "<group>"; };
 		D15B9CE71D70F84D00B3EE49 /* RoundRectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRectView.swift; sourceTree = "<group>"; };
-		DA28BEB51A5F023100D8F599 /* TB_TwitterHeader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TB_TwitterHeader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA28BEB51A5F023100D8F599 /* iOSHeader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSHeader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA28BEB91A5F023100D8F599 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA28BEBA1A5F023100D8F599 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA28BEBC1A5F023100D8F599 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		DA28BEAC1A5F023100D8F599 = {
 			isa = PBXGroup;
 			children = (
-				DA28BEB71A5F023100D8F599 /* TB_TwitterHeader */,
+				DA28BEB71A5F023100D8F599 /* iOSHeader */,
 				DA28BEB61A5F023100D8F599 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,12 +60,12 @@
 		DA28BEB61A5F023100D8F599 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA28BEB51A5F023100D8F599 /* TB_TwitterHeader.app */,
+				DA28BEB51A5F023100D8F599 /* iOSHeader.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DA28BEB71A5F023100D8F599 /* TB_TwitterHeader */ = {
+		DA28BEB71A5F023100D8F599 /* iOSHeader */ = {
 			isa = PBXGroup;
 			children = (
 				DAC4380C1A65D9C300EAB0DA /* Helpers */,
@@ -74,6 +74,7 @@
 				DA28BEC11A5F023100D8F599 /* Images.xcassets */,
 				DA28BEB81A5F023100D8F599 /* Supporting Files */,
 			);
+			name = iOSHeader;
 			path = TB_TwitterHeader;
 			sourceTree = "<group>";
 		};
@@ -105,9 +106,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DA28BEB41A5F023100D8F599 /* TB_TwitterHeader */ = {
+		DA28BEB41A5F023100D8F599 /* iOSHeader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA28BED41A5F023100D8F599 /* Build configuration list for PBXNativeTarget "TB_TwitterHeader" */;
+			buildConfigurationList = DA28BED41A5F023100D8F599 /* Build configuration list for PBXNativeTarget "iOSHeader" */;
 			buildPhases = (
 				DA28BEB11A5F023100D8F599 /* Sources */,
 				DA28BEB21A5F023100D8F599 /* Frameworks */,
@@ -117,9 +118,9 @@
 			);
 			dependencies = (
 			);
-			name = TB_TwitterHeader;
+			name = iOSHeader;
 			productName = TB_TwitterHeader;
-			productReference = DA28BEB51A5F023100D8F599 /* TB_TwitterHeader.app */;
+			productReference = DA28BEB51A5F023100D8F599 /* iOSHeader.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -131,14 +132,14 @@
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "Yari D'areglia";
+				ORGANIZATIONNAME = "mats.becker@gmail.com";
 				TargetAttributes = {
 					DA28BEB41A5F023100D8F599 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
 				};
 			};
-			buildConfigurationList = DA28BEB01A5F023100D8F599 /* Build configuration list for PBXProject "TB_TwitterHeader" */;
+			buildConfigurationList = DA28BEB01A5F023100D8F599 /* Build configuration list for PBXProject "iOSHeader" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -151,7 +152,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DA28BEB41A5F023100D8F599 /* TB_TwitterHeader */,
+				DA28BEB41A5F023100D8F599 /* iOSHeader */,
 			);
 		};
 /* End PBXProject section */
@@ -292,8 +293,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TB_TwitterHeader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bitwaker.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = digital.safari.app;
+				PRODUCT_NAME = iOSHeader;
 				SWIFT_OBJC_BRIDGING_HEADER = "TB_TwitterHeader/TB_TwitterHeader-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -306,8 +307,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TB_TwitterHeader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bitwaker.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = digital.safari.app;
+				PRODUCT_NAME = iOSHeader;
 				SWIFT_OBJC_BRIDGING_HEADER = "TB_TwitterHeader/TB_TwitterHeader-Bridging-Header.h";
 			};
 			name = Release;
@@ -315,7 +316,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DA28BEB01A5F023100D8F599 /* Build configuration list for PBXProject "TB_TwitterHeader" */ = {
+		DA28BEB01A5F023100D8F599 /* Build configuration list for PBXProject "iOSHeader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA28BED21A5F023100D8F599 /* Debug */,
@@ -324,7 +325,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA28BED41A5F023100D8F599 /* Build configuration list for PBXNativeTarget "TB_TwitterHeader" */ = {
+		DA28BED41A5F023100D8F599 /* Build configuration list for PBXNativeTarget "iOSHeader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA28BED51A5F023100D8F599 /* Debug */,
