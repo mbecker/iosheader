@@ -79,6 +79,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         // PULL DOWN -----------------
         
+        // Hack to move header image to pos(0,0) when scrolling down
+        if offset <= 300 - 66 {
+            headerImage0.transform = CGAffineTransformMakeTranslation(0, 0)
+        }
+        
         if offset < 0 {
             
             let headerScaleFactor:CGFloat = -(offset) / header.bounds.height
@@ -135,7 +140,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             let avatarSizeVariation = ((avatarImage.bounds.height * (1.0 + avatarScaleFactor)) - avatarImage.bounds.height) / 2.0
             avatarTransform = CATransform3DTranslate(avatarTransform, 0, avatarSizeVariation, 0)
             avatarTransform = CATransform3DScale(avatarTransform, 1.0 - avatarScaleFactor, 1.0 - avatarScaleFactor, 0)
-            
+            avatarImage.layer.transform = avatarTransform
             
             if offset <= offset_HeaderStop {
                 
@@ -149,7 +154,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 }
             }
             
-            // Change statusBarStyle color
+            // - StatusBar: Change color to dark when white navbar image is shown
             if offset <= offset_B_LabelHeader {
                 UIApplication.sharedApplication().statusBarStyle = .LightContent
             } else {
@@ -162,7 +167,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // Apply Transformations
         
         header.layer.transform = headerTransform
-        avatarImage.layer.transform = avatarTransform
     }
     
 }
