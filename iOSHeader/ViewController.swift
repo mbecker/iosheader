@@ -34,15 +34,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var sizerView: UIView!
     
-    
-    
-    @IBOutlet weak var headerMapIcon: RoundRectView!
-    @IBOutlet weak var headerFilterIcon: RoundRectView!
-    @IBOutlet weak var headerCameraIcon: RoundRectView!
-    
+    @IBOutlet weak var headerMapIcon: CustomButton!
+    @IBOutlet weak var headerFilterIcon: CustomButton!
+    @IBOutlet weak var headerCameraIcon: CustomButton!
     
     @IBOutlet weak var headerImage0: UIImageView!
-    
     
     var headerBlurImageView:UIImageView!
     
@@ -54,9 +50,31 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         return true
     }
     
+    @IBAction func headerMapIconDidTouch(sender: AnyObject) {
+        showMapView()
+    }
+    
+    @IBAction func headerContentIconDidTouch(sender: AnyObject) {
+        showMapView()
+    }
+    
+    
+    func showMapView() {
+        print("Ican tapped ....")
+        
+        self.performSegueWithIdentifier("mapViewControllerSegue", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
+        
+        header.layer.zPosition = 0
+        scrollView.layer.zPosition = 1
+        header.userInteractionEnabled = true
+        self.view.userInteractionEnabled = true
+        
+        logViewHierarchy(self.view, num: 0)
         
     }
 
@@ -64,6 +82,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         sizerView.backgroundColor = UIColor.clearColor()
         
+        self.view.clipsToBounds = true
         header.clipsToBounds = true
     }
 
@@ -92,11 +111,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             headerTransform = CATransform3DScale(headerTransform, 1.0 + headerScaleFactor, 1.0 + headerScaleFactor, 0)
             
             header.layer.transform = headerTransform
+            
+            headerMapIcon.hidden        = true
+            headerFilterIcon.hidden         = true
+            headerCameraIcon.hidden     = true
         }
         
         // SCROLL UP/DOWN ------------
             
         else {
+            
+            headerMapIcon.hidden        = false
+            headerFilterIcon.hidden         = false
+            headerCameraIcon.hidden     = false
             
             // Header -----------
             
@@ -105,33 +132,33 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             
             //  ------------ Transformation
             
-            // - Label Transformation
+            //  - Label Transformation
             
             let labelTransform = CATransform3DMakeTranslation(0, max(-(centerNavBar + 25 ), offset_B_LabelHeader - 20 - offset), 0)
             headerLabel.layer.transform = labelTransform
             
             
-            // - Icon transformation
-            //      ToDo: Why "-6"?
+            //  - Icon transformation
             
             let iconTransform = CATransform3DMakeTranslation(0, max(-(centerNavBar - 6 ), offset_HeaderStop - offset), 0)
-            let iconAlpha = 1 - min(1, min(0, offset_HeaderStop - offset) / -(centerNavBar - 6 / 2 ))
             
             headerMapIcon.layer.transform       = iconTransform
             headerFilterIcon.layer.transform    = iconTransform
             headerCameraIcon.layer.transform    = iconTransform
             
             
-            headerMapIcon.setShadowAlpha(iconAlpha)
-            headerFilterIcon.setShadowAlpha(iconAlpha)
-            headerCameraIcon.setShadowAlpha(iconAlpha)
-            
             // - Header Image transformation
             
-            if offset > 300 - 66 {
+            if offset >= offset_HeaderStop {
                 // Only move header image when the navbar reaches top
                 let headerImageTransform = CATransform3DMakeTranslation(0, max(-66, 300 - 66 - offset), 0)
                 headerImage0.layer.transform    = headerImageTransform
+                
+                header.layer.zPosition = 1
+                scrollView.layer.zPosition = 0
+            } else {
+                header.layer.zPosition = 0
+                scrollView.layer.zPosition = 1
             }
             
 
@@ -141,20 +168,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             avatarTransform = CATransform3DTranslate(avatarTransform, 0, avatarSizeVariation, 0)
             avatarTransform = CATransform3DScale(avatarTransform, 1.0 - avatarScaleFactor, 1.0 - avatarScaleFactor, 0)
             avatarImage.layer.transform = avatarTransform
-            
-            if offset <= offset_HeaderStop {
-                
-                if avatarImage.layer.zPosition < header.layer.zPosition{
-                    header.layer.zPosition = 0
-                }
-                
-            }else {
-                if avatarImage.layer.zPosition >= header.layer.zPosition{
-                    header.layer.zPosition = 1
-                }
-            }
-            
-            // - StatusBar: Change color to dark when white navbar image is shown
+
+            //  ------------ Statusbar
+            //  Change color to dark when white navbar image is shown
             if offset <= offset_B_LabelHeader {
                 UIApplication.sharedApplication().statusBarStyle = .LightContent
             } else {
@@ -168,5 +184,22 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         header.layer.transform = headerTransform
     }
+    
+    func logViewHierarchy(view: UIView, num: Int) {
+        
+        var index = num
+        var chars: String = String()
+        for i in 0..<index {
+            chars = chars + "_"
+        }
+        
+        index = index + 2
+        print("\(chars) \(NSStringFromClass(view.dynamicType)) userInteractionEnabled: \(view.userInteractionEnabled)")
+        for subview in view.subviews {
+            self.logViewHierarchy(subview, num: index)
+        }
+    }
+    
+    
     
 }

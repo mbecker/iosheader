@@ -11,11 +11,11 @@
     @IBInspectable var cornerRadius: CGFloat = 0.0
     @IBInspectable var borderWidth: CGFloat = 0.5
     @IBInspectable var shadowOpacity: Float = 0.4
-    private var customBackgroundColor = UIColor.whiteColor()
+    private var customBackgroundColor: UIColor = UIColor.clearColor()
         
     override var backgroundColor: UIColor?{
         didSet {
-//            customBackgroundColor = backgroundColor!
+            customBackgroundColor = backgroundColor!
             super.backgroundColor = UIColor.clearColor()
         }
     }
@@ -30,6 +30,7 @@
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.userInteractionEnabled = true
         self.setup()
     }
     
@@ -58,4 +59,35 @@
         layer.shadowOpacity = shadowOpacity * Float(alpha);
         super.backgroundColor = UIColor.clearColor()
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        if let touch = touches.first {
+//            let currentPoint = touch.locationInView(self)
+//            // do something with your currentPoint
+//        }
+        
+        
+        self.backgroundColor = UIColor.blueColor()
+    }
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        if let touch = touches.first {
+//            let currentPoint = touch.locationInView(self)
+//            // do something with your currentPoint
+//        }
+        
+        
+        self.backgroundColor = UIColor.blueColor()
+    }
+    
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        if let touch = touches.first {
+//            let currentPoint = touch.locationInView(self)
+//            // do something with your currentPoint
+//        }
+        
+        self.backgroundColor = UIColor.whiteColor()
+    }
+
 }
