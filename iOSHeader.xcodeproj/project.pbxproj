@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,7 @@
 		D14324511D71CC7C00FF7F55 /* UIViewWithBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewWithBorders.swift; sourceTree = "<group>"; };
 		D15B9CE51D70F5FD00B3EE49 /* IconImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImageView.swift; sourceTree = "<group>"; };
 		D15B9CE71D70F84D00B3EE49 /* RoundRectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRectView.swift; sourceTree = "<group>"; };
+		D1F882791D71FEEC00125B57 /* iOSHeader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSHeader-Bridging-Header.h"; sourceTree = "<group>"; };
 		DA28BEB51A5F023100D8F599 /* iOSHeader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSHeader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA28BEB91A5F023100D8F599 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA28BEBA1A5F023100D8F599 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +34,6 @@
 		DA28BEC41A5F023100D8F599 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DA28BEDA1A5F385F00D8F599 /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		DABC18B91A61767B00D69C9E /* TWTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWTButton.swift; sourceTree = "<group>"; };
-		DABC18CA1A618ED700D69C9E /* TB_TwitterHeader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TB_TwitterHeader-Bridging-Header.h"; sourceTree = "<group>"; };
 		DABC18CB1A618ED800D69C9E /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		DABC18CC1A618ED800D69C9E /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,17 +74,16 @@
 				DA28BEC11A5F023100D8F599 /* Images.xcassets */,
 				DA28BEB81A5F023100D8F599 /* Supporting Files */,
 			);
-			name = iOSHeader;
-			path = TB_TwitterHeader;
+			path = iOSHeader;
 			sourceTree = "<group>";
 		};
 		DA28BEB81A5F023100D8F599 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DABC18CA1A618ED700D69C9E /* TB_TwitterHeader-Bridging-Header.h */,
 				DA28BEBA1A5F023100D8F599 /* AppDelegate.swift */,
 				DA28BEC31A5F023100D8F599 /* LaunchScreen.xib */,
 				DA28BEB91A5F023100D8F599 /* Info.plist */,
+				D1F882791D71FEEC00125B57 /* iOSHeader-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -140,7 +139,7 @@
 				};
 			};
 			buildConfigurationList = DA28BEB01A5F023100D8F599 /* Build configuration list for PBXProject "iOSHeader" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -291,11 +290,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = TB_TwitterHeader/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/iOSHeader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = digital.safari.app;
 				PRODUCT_NAME = iOSHeader;
-				SWIFT_OBJC_BRIDGING_HEADER = "TB_TwitterHeader/TB_TwitterHeader-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSHeader/iOSHeader-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -305,11 +304,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = TB_TwitterHeader/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/iOSHeader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = digital.safari.app;
 				PRODUCT_NAME = iOSHeader;
-				SWIFT_OBJC_BRIDGING_HEADER = "TB_TwitterHeader/TB_TwitterHeader-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSHeader/iOSHeader-Bridging-Header.h";
 			};
 			name = Release;
 		};
