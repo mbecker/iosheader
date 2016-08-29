@@ -9,8 +9,19 @@
 import UIKit
 
 class MapViewController: UIViewController {
-
-    @IBAction func buttonDidTouch(sender: AnyObject) {
+    
+    override func viewDidLoad() {
+        self.navigationController?.navigationBarHidden = true
+        self.tabBarController?.tabBar.hidden = true
+        UIApplication.sharedApplication().statusBarStyle = .Default
+    }
+    
+    @IBAction func headerButtonDidTouch(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+
+    @IBAction func newAnimalButtonDidTouch(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }

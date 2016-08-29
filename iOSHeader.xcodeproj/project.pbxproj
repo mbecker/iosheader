@@ -12,6 +12,8 @@
 		D15B9CE81D70F84D00B3EE49 /* RoundRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15B9CE71D70F84D00B3EE49 /* RoundRectView.swift */; };
 		D16BC2A71D723127005AECFA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16BC2A61D723127005AECFA /* MapViewController.swift */; };
 		D16BC2A91D724337005AECFA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16BC2A81D724337005AECFA /* CustomButton.swift */; };
+		D1ECC3361D72FC040011687B /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1ECC3351D72FC040011687B /* Mapbox.framework */; };
+		D1ECC3371D72FC040011687B /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D1ECC3351D72FC040011687B /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA28BEBB1A5F023100D8F599 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28BEBA1A5F023100D8F599 /* AppDelegate.swift */; };
 		DA28BEBD1A5F023100D8F599 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28BEBC1A5F023100D8F599 /* ViewController.swift */; };
 		DA28BEC01A5F023100D8F599 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA28BEBE1A5F023100D8F599 /* Main.storyboard */; };
@@ -22,12 +24,27 @@
 		DABC18CD1A618ED800D69C9E /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC18CC1A618ED800D69C9E /* FXBlurView.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D1ECC3381D72FC040011687B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D1ECC3371D72FC040011687B /* Mapbox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		D14324511D71CC7C00FF7F55 /* UIViewWithBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewWithBorders.swift; sourceTree = "<group>"; };
 		D15B9CE51D70F5FD00B3EE49 /* IconImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImageView.swift; sourceTree = "<group>"; };
 		D15B9CE71D70F84D00B3EE49 /* RoundRectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRectView.swift; sourceTree = "<group>"; };
 		D16BC2A61D723127005AECFA /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D16BC2A81D724337005AECFA /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		D1ECC3351D72FC040011687B /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 		D1F882791D71FEEC00125B57 /* iOSHeader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSHeader-Bridging-Header.h"; sourceTree = "<group>"; };
 		DA28BEB51A5F023100D8F599 /* iOSHeader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSHeader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA28BEB91A5F023100D8F599 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1ECC3361D72FC040011687B /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +74,7 @@
 		DA28BEAC1A5F023100D8F599 = {
 			isa = PBXGroup;
 			children = (
+				D1ECC3351D72FC040011687B /* Mapbox.framework */,
 				DA28BEB71A5F023100D8F599 /* iOSHeader */,
 				DA28BEB61A5F023100D8F599 /* Products */,
 			);
@@ -118,6 +137,7 @@
 				DA28BEB11A5F023100D8F599 /* Sources */,
 				DA28BEB21A5F023100D8F599 /* Frameworks */,
 				DA28BEB31A5F023100D8F599 /* Resources */,
+				D1ECC3381D72FC040011687B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,6 +318,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOSHeader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = digital.safari.app;
@@ -312,6 +336,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOSHeader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = digital.safari.app;
