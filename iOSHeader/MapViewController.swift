@@ -20,6 +20,10 @@ class MapViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func backButtonDidTouch(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBAction func newAnimalButtonDidTouch(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
