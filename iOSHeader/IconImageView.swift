@@ -1,6 +1,6 @@
 //
 //  IconImageView.swift
-//  TB_TwitterHeader
+//  iOSHeader
 //
 //  Created by Mats Becker on 8/27/16.
 //  Copyright © 2016 Yari D'areglia. All rights reserved.

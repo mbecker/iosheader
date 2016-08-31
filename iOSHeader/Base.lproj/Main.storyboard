@@ -26,7 +26,7 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@addo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5T-mG-5tL" userLabel="TwitterUsername">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@addo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5T-mG-5tL" userLabel="Twitter">
                                         <rect key="frame" x="16" y="341" width="38" height="14"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                         <color key="textColor" red="0.40000000000000002" green="0.41960784313725491" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,7 +71,7 @@
                                         <color key="textColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBa-yn-xtu" customClass="CustomButton" customModule="iOSHeader" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBa-yn-xtu" userLabel="Content Map Icon" customClass="CustomButton" customModule="iOSHeader" customModuleProvider="target">
                                         <rect key="frame" x="311" y="278" width="44" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -106,14 +106,14 @@
                                             <segue destination="xWZ-sn-37O" kind="presentation" id="Cdh-e6-UyA"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gK5-bt-6k1" customClass="CustomButton" customModule="iOSHeader" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gK5-bt-6k1" userLabel="Content Tune Icon" customClass="CustomButton" customModule="iOSHeader" customModuleProvider="target">
                                         <rect key="frame" x="255" y="278" width="44" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="6nB-lv-9T1"/>
                                             <constraint firstAttribute="height" constant="44" id="Vel-n7-Eow"/>
                                         </constraints>
-                                        <state key="normal" image="ic_filter_list"/>
+                                        <state key="normal" image="ic_tune"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="22"/>
@@ -138,14 +138,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uOV-qI-e7H" userLabel="Sizer">
-                                        <rect key="frame" x="0.0" y="1222" width="375" height="2"/>
-                                        <color key="backgroundColor" red="0.97254901959999995" green="0.30196078430000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="2" id="lAc-Ca-LZh"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmk-ir-2Gr" customClass="CustomButton" customModule="iOSHeader" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmk-ir-2Gr" userLabel="Content Camera Icon" customClass="CustomButton" customModule="iOSHeader" customModuleProvider="target">
                                         <rect key="frame" x="199" y="278" width="44" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -177,6 +170,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uOV-qI-e7H" userLabel="Sizer">
+                                        <rect key="frame" x="0.0" y="1222" width="375" height="2"/>
+                                        <color key="backgroundColor" red="0.97254901959999995" green="0.30196078430000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="lAc-Ca-LZh"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWA-ig-KMl" customClass="MGLMapView">
                                         <rect key="frame" x="202" y="341" width="165" height="127"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -271,6 +271,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4a-ic-2ln" userLabel="Header">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ju5-kv-klA" userLabel="BlurImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="7qq-bY-kmg"/>
+                                        </constraints>
+                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-addo2" translatesAutoresizingMaskIntoConstraints="NO" id="TPr-rV-vy0">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                         <constraints>
@@ -328,7 +334,7 @@
                                             <constraint firstAttribute="width" constant="44" id="Yss-5P-mOd"/>
                                             <constraint firstAttribute="height" constant="44" id="jD9-8B-qnQ"/>
                                         </constraints>
-                                        <state key="normal" image="ic_filter_list"/>
+                                        <state key="normal" image="ic_tune"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="22"/>
@@ -379,20 +385,27 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="ju5-kv-klA" firstAttribute="leading" secondItem="c4a-ic-2ln" secondAttribute="leading" id="7Sc-4j-VxF"/>
                                     <constraint firstItem="TPr-rV-vy0" firstAttribute="leading" secondItem="c4a-ic-2ln" secondAttribute="leading" id="7eO-nV-fMc"/>
+                                    <constraint firstAttribute="trailing" secondItem="ju5-kv-klA" secondAttribute="trailing" id="8Ou-qB-ARl"/>
                                     <constraint firstItem="NyU-Z3-ud8" firstAttribute="top" secondItem="c4a-ic-2ln" secondAttribute="top" constant="278" id="AQa-9s-Ing"/>
+                                    <constraint firstItem="ju5-kv-klA" firstAttribute="leading" secondItem="c4a-ic-2ln" secondAttribute="leading" id="BRn-Rf-twl"/>
                                     <constraint firstItem="TPr-rV-vy0" firstAttribute="centerY" secondItem="c4a-ic-2ln" secondAttribute="centerY" id="EPo-71-yN2"/>
                                     <constraint firstItem="8mu-61-BsN" firstAttribute="top" secondItem="c4a-ic-2ln" secondAttribute="top" constant="278" id="Gif-Bq-MeY"/>
                                     <constraint firstItem="TPr-rV-vy0" firstAttribute="height" secondItem="c4a-ic-2ln" secondAttribute="height" id="GrL-Um-jcM"/>
+                                    <constraint firstItem="ju5-kv-klA" firstAttribute="top" secondItem="c4a-ic-2ln" secondAttribute="top" id="HAv-ph-fTd"/>
                                     <constraint firstItem="jjS-2h-TkZ" firstAttribute="top" secondItem="c4a-ic-2ln" secondAttribute="top" constant="320" id="TeR-L4-wCp"/>
+                                    <constraint firstItem="ju5-kv-klA" firstAttribute="width" secondItem="c4a-ic-2ln" secondAttribute="width" id="YM9-8J-Cfy"/>
                                     <constraint firstItem="TPr-rV-vy0" firstAttribute="centerX" secondItem="c4a-ic-2ln" secondAttribute="centerX" id="Zmd-Le-fwg"/>
                                     <constraint firstItem="ZTi-L9-zIe" firstAttribute="top" secondItem="c4a-ic-2ln" secondAttribute="top" constant="278" id="eGF-Ja-kbs"/>
+                                    <constraint firstItem="ju5-kv-klA" firstAttribute="top" secondItem="c4a-ic-2ln" secondAttribute="top" id="hpQ-2k-cph"/>
                                     <constraint firstAttribute="height" constant="300" id="iyD-ZR-eYP"/>
+                                    <constraint firstItem="ju5-kv-klA" firstAttribute="width" secondItem="c4a-ic-2ln" secondAttribute="width" id="lrP-Me-l9u"/>
                                     <constraint firstItem="TPr-rV-vy0" firstAttribute="top" secondItem="c4a-ic-2ln" secondAttribute="top" id="yKF-w8-NTe"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.34509803921568627" green="0.34509803921568627" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="bottomBorderWidth">
                                         <real key="value" value="1"/>
@@ -403,6 +416,11 @@
                                         <exclude reference="EPo-71-yN2"/>
                                         <exclude reference="GrL-Um-jcM"/>
                                         <exclude reference="Zmd-Le-fwg"/>
+                                        <exclude reference="7Sc-4j-VxF"/>
+                                        <exclude reference="8Ou-qB-ARl"/>
+                                        <exclude reference="HAv-ph-fTd"/>
+                                        <exclude reference="YM9-8J-Cfy"/>
+                                        <exclude reference="lrP-Me-l9u"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -435,6 +453,7 @@
                             <constraint firstItem="M4a-Ru-ipl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="k3O-QJ-k5B"/>
                             <constraint firstItem="wXI-zV-4oq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="lBd-js-yJy"/>
                             <constraint firstAttribute="leadingMargin" secondItem="F5T-mG-5tL" secondAttribute="leading" id="lw8-ml-kdy"/>
+                            <constraint firstItem="ju5-kv-klA" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="m63-cf-SS3"/>
                             <constraint firstAttribute="leadingMargin" secondItem="TRx-2c-YBf" secondAttribute="leading" id="tJO-6H-D0u"/>
                             <constraint firstItem="ZTi-L9-zIe" firstAttribute="centerY" secondItem="gK5-bt-6k1" secondAttribute="centerY" id="vCE-OF-cTm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yFX-oA-oI3" secondAttribute="trailing" id="vya-lt-r3R"/>
@@ -457,6 +476,7 @@
                     <connections>
                         <outlet property="avatarImage" destination="Pcf-lt-Bh9" id="DhA-99-e9Y"/>
                         <outlet property="header" destination="c4a-ic-2ln" id="va7-hY-cib"/>
+                        <outlet property="headerBlurImageView0" destination="ju5-kv-klA" id="uH5-ES-u2g"/>
                         <outlet property="headerCameraIcon" destination="NyU-Z3-ud8" id="pOC-Sz-05J"/>
                         <outlet property="headerFilterIcon" destination="ZTi-L9-zIe" id="2qE-j1-oe3"/>
                         <outlet property="headerImage0" destination="TPr-rV-vy0" id="fXs-HO-hig"/>
@@ -486,7 +506,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdh-ZI-0x4" customClass="CustomButton" customModule="iOSHeader" customModuleProvider="target">
-                                        <rect key="frame" x="201" y="525" width="166" height="36"/>
+                                        <rect key="frame" x="201" y="391" width="166" height="36"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="6CL-S9-4eA"/>
@@ -520,6 +540,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xdh-ZI-0x4" secondAttribute="bottom" constant="220" id="B3A-qf-3B6"/>
                                     <constraint firstAttribute="bottom" secondItem="xdh-ZI-0x4" secondAttribute="bottom" constant="86" id="Fy5-G3-9fU"/>
                                     <constraint firstAttribute="trailing" secondItem="xdh-ZI-0x4" secondAttribute="trailing" constant="8" id="J6a-ef-JQi"/>
                                 </constraints>
@@ -534,6 +555,11 @@
                                         <real key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Fy5-G3-9fU"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJj-Fk-vHa" userLabel="Header">
                                 <rect key="frame" x="0.0" y="20" width="375" height="66"/>
@@ -553,7 +579,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5c5-Cy-PkR">
                                                 <rect key="frame" x="12" y="10" width="149" height="24"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                <state key="normal" title="Addo Elephant Park" image="ic_chevron_left">
+                                                <state key="normal" title="Addo Elephant Park" image="ic_navigate_before">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -596,7 +622,7 @@
                                                     <constraint firstAttribute="width" constant="44" id="7nW-M2-1Ly"/>
                                                     <constraint firstAttribute="height" constant="44" id="BPW-Sp-J1z"/>
                                                 </constraints>
-                                                <state key="normal" image="ic_filter_list"/>
+                                                <state key="normal" image="ic_tune"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="22"/>
@@ -671,7 +697,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.34509803919999998" green="0.34509803919999998" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="bottomBorderWidth">
                                                 <real key="value" value="1"/>
@@ -711,29 +737,52 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cV0-cN-Vrx" userLabel="Footer">
-                                <rect key="frame" x="0.0" y="601" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="487" width="375" height="180"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Addo Elephant Park" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bR2-gc-gp5">
-                                        <rect key="frame" x="20" y="25" width="130" height="17"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Addo Elephant Park" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bR2-gc-gp5">
+                                        <rect key="frame" x="20" y="8" width="130" height="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" red="0.34509803919999998" green="0.34509803919999998" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spot1" translatesAutoresizingMaskIntoConstraints="NO" id="oDX-f1-Aby">
+                                        <rect key="frame" x="20" y="33" width="160" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="4t8-KA-wzO"/>
+                                            <constraint firstAttribute="width" constant="160" id="EaX-el-pG0"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.97254902119999997" green="0.30196079609999998" blue="0.270588249" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomBorderWidth">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="oDX-f1-Aby" firstAttribute="leading" secondItem="cV0-cN-Vrx" secondAttribute="leading" constant="20" id="BiS-az-Ka9"/>
                                     <constraint firstItem="bR2-gc-gp5" firstAttribute="leading" secondItem="cV0-cN-Vrx" secondAttribute="leading" constant="20" id="TNr-jd-sVj"/>
                                     <constraint firstItem="bR2-gc-gp5" firstAttribute="centerY" secondItem="cV0-cN-Vrx" secondAttribute="centerY" id="aMZ-vY-hTI"/>
-                                    <constraint firstAttribute="height" constant="66" id="uHE-Lc-IQ1"/>
+                                    <constraint firstItem="oDX-f1-Aby" firstAttribute="top" secondItem="bR2-gc-gp5" secondAttribute="bottom" constant="8" id="nkh-RQ-8So"/>
+                                    <constraint firstItem="bR2-gc-gp5" firstAttribute="top" secondItem="cV0-cN-Vrx" secondAttribute="top" constant="8" id="pi0-9z-kLC"/>
+                                    <constraint firstAttribute="height" constant="180" id="uHE-Lc-IQ1"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.34509803919999998" green="0.34509803919999998" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="topBorderWidth">
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="aMZ-vY-hTI"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -768,6 +817,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="backButton" destination="5c5-Cy-PkR" id="2h6-yK-WLx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7a0-2j-FYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -799,10 +851,11 @@
         <image name="Park" width="44" height="44"/>
         <image name="bg-addo2" width="454" height="340"/>
         <image name="ic_camera_alt" width="24" height="24"/>
-        <image name="ic_chevron_left" width="24" height="24"/>
-        <image name="ic_filter_list" width="24" height="24"/>
         <image name="ic_map" width="24" height="24"/>
+        <image name="ic_navigate_before" width="24" height="24"/>
+        <image name="ic_tune" width="24" height="24"/>
         <image name="profile" width="175" height="175"/>
+        <image name="spot1" width="628" height="417"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PLg-UR-W04"/>

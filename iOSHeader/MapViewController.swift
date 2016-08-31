@@ -14,11 +14,18 @@ class MapViewController: UIViewController {
         self.navigationController?.navigationBarHidden = true
         self.tabBarController?.tabBar.hidden = true
         UIApplication.sharedApplication().statusBarStyle = .Default
+        
+        let labely = backButton.frame.origin.y
+        let labelh = backButton.frame.height
+        print("--")
+        print("Label y: \(labely)")
+        print("Label h: \(labelh)")
+        print("= \(labely - labelh / 2)")
+        print("_______________")
     }
     
-    @IBAction func headerButtonDidTouch(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+    
+    @IBOutlet weak var backButton: UIButton!
 
     @IBAction func backButtonDidTouch(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)

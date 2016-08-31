@@ -27,7 +27,7 @@ extension UIView {
         set {
             let line = UIView(frame: CGRect(x: 0.0, y: 0.0, width: bounds.width, height: newValue))
             line.translatesAutoresizingMaskIntoConstraints = false
-            line.backgroundColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1.00)
+            line.backgroundColor = UIColor(CGColor: layer.borderColor!)
             self.addSubview(line)
             
             let views = ["line": line]
@@ -44,7 +44,7 @@ extension UIView {
         set {
             let line = UIView(frame: CGRect(x: 0.0, y: bounds.height, width: bounds.width, height: newValue))
             line.translatesAutoresizingMaskIntoConstraints = false
-            line.backgroundColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1.00)
+            line.backgroundColor = UIColor(CGColor: layer.borderColor!)
             self.addSubview(line)
             
             let views = ["line": line]

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  TB_TwitterHeader
+//  iOSHeader
 //
 //  Created by Yari D'areglia on 08/01/15.
 //  Copyright (c) 2015 Yari D'areglia. All rights reserved.

@@ -118,11 +118,11 @@
 			isa = PBXGroup;
 			children = (
 				DAC4380C1A65D9C300EAB0DA /* Helpers */,
-				DA28BEBC1A5F023100D8F599 /* ViewController.swift */,
 				DA28BEBE1A5F023100D8F599 /* Main.storyboard */,
+				DA28BEBC1A5F023100D8F599 /* ViewController.swift */,
+				D16BC2A61D723127005AECFA /* MapViewController.swift */,
 				DA28BEC11A5F023100D8F599 /* Images.xcassets */,
 				DA28BEB81A5F023100D8F599 /* Supporting Files */,
-				D16BC2A61D723127005AECFA /* MapViewController.swift */,
 			);
 			path = iOSHeader;
 			sourceTree = SOURCE_ROOT;

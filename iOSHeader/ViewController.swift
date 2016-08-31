@@ -1,12 +1,13 @@
 //
 //  ViewController.swift
-//  TB_TwitterHeader
+//  iOSHeader
 //
 //  Created by Yari D'areglia on 17/01/15.
 //  Copyright (c) 2015 Yari D'areglia. All rights reserved.
 //
 
 import UIKit
+import EZSwiftExtensions
 
 /* ---- CONST SCREEN ---- */
 let headerHeight:CGFloat = 300
@@ -44,9 +45,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var headerFilterIcon: CustomButton!
     @IBOutlet weak var headerCameraIcon: CustomButton!
     
+    @IBOutlet weak var headerBlurImageView0: UIImageView!
     @IBOutlet weak var headerImage0: UIImageView!
-    var headerOverlayImage: UIView = UIView()
-    var headerBlurImageView: UIImageView = UIImageView()
     
     override func prefersStatusBarHidden() -> Bool {
         return true
@@ -71,22 +71,25 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         scrollView.delegate = self
         
-        header.layer.zPosition = 0
-        scrollView.layer.zPosition = 1
+        
         
         self.navigationController?.navigationBarHidden = true
         
         // * ToDo: Create image for landscape (best would be to create image new when device rotates)
-        headerBlurImageView = UIImageView(frame: headerImage0.bounds)
-        headerBlurImageView.image = headerImage0.image?.blurredImageWithRadius(10, iterations: 20, tintColor: UIColor.clearColor())
-        headerBlurImageView.contentMode = UIViewContentMode.ScaleAspectFill
-        headerBlurImageView.alpha = 0.0
-        header.addSubview(headerBlurImageView)
+//        headerBlurImageView = UIImageView(frame: headerImage0.bounds)
+//        headerBlurImageView = UIImageView(frame: CGRect(x: headerImage0.layer.position.x, y: headerImage0.layer.position.y, w: headerImage0.frame.width + 100, h: headerImage0.frame.height))
+        headerBlurImageView0.image = headerImage0.image?.blurredImageWithRadius(10, iterations: 20, tintColor: UIColor.clearColor())
+        headerBlurImageView0.contentMode = UIViewContentMode.ScaleAspectFill
+        headerBlurImageView0.alpha = 0.0
+//        header.insertSubview(headerBlurImageView, aboveSubview: headerImage0)
         
+        
+        scrollView.layer.zPosition = 1
+        header.layer.zPosition = 0
+        headerBlurImageView0.layer.zPosition = -1
         headerImage0.layer.zPosition = -2
-        headerBlurImageView.layer.zPosition = -1
         
-        logViewHierarchy(self.view, num: 0)
+//        logViewHierarchy(self.view, num: 0)
         
     }
     
@@ -102,15 +105,32 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         self.view.clipsToBounds = true
         header.clipsToBounds = true
+        
+        print("viewDidAppear")
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         
-        print("**** Scroll start ***")
+        if UIDevice.currentDevice().orientation.isLandscape.boolValue {
+            print("Landscape")
+        } else {
+            print("Portrait")
+        }
+        
+        coordinator.animateAlongsideTransition(nil, completion: {
+            _ in
+            
+            print("After change")
+            
+        })
+        
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
         
         let offset = scrollView.contentOffset.y
         var avatarTransform = CATransform3DIdentity
@@ -120,8 +140,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         // Hack to move header image to pos(0,0) when scrolling down
         if offset <= 300 - 66 {
-            headerImage0.transform          = CGAffineTransformMakeTranslation(0, 0)
-            headerBlurImageView.transform   = CGAffineTransformMakeTranslation(0, 0)
+            headerImage0.transform              = CGAffineTransformMakeTranslation(0, 0)
+            headerBlurImageView0.transform      = CGAffineTransformMakeTranslation(0, 0)
         }
         
         if offset < 0 {
@@ -174,14 +194,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             
             
             // * Header Image transformation
-            // ** Only move header image when the navbar reaches top
+            // ** Only move header images when the navbar reaches top
             
             if offset >= offset_HeaderStop {
                 // * Move header
                 let headerImageTransform = CATransform3DMakeTranslation(0, max(-navBarHeight, headerHeight - navBarHeight - offset), 0)
                 headerImage0.layer.transform        = headerImageTransform
-                headerOverlayImage.layer.transform  = headerImageTransform
-                headerBlurImageView.layer.transform = headerImageTransform
+                headerBlurImageView0.layer.transform = headerImageTransform
                 
                 // * Change z position of layer to hide scrollview and show header on top
                 header.layer.zPosition = 1
@@ -192,7 +211,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             }
             
             //  ------------ Blur
-            headerBlurImageView.alpha = 1 -  min (1.0, (offset_HeaderStop - offset) / offset_HeaderStop)
+            headerBlurImageView0.alpha = 1 -  min (1.0, (offset_HeaderStop - offset) / offset_HeaderStop)
             
             //  ------------ Avatar
             let avatarScaleFactor = (min(offset_HeaderStop, offset)) / offset_HeaderStop / 3.84 // Slow down the animation
@@ -212,38 +231,34 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         // Apply Transformations
         header.layer.transform = headerTransform
-        var posy = header.frame.origin.y
-        var posx = header.frame.origin.x
-        var hheader = header.frame.height
-        print("Header posy: \(posy)")
-        print("Header posx: \(posx)")
-        print("Header h:    \(hheader)")
+//        let posy = header.frame.origin.y
+//        let posx = header.frame.origin.x
+//        let hheader = header.frame.height
+//        print("Header posy: \(posy)")
+//        print("Header posx: \(posx)")
+//        print("Header h:    \(hheader)")
+//        
+//        let labely = headerLabel.frame.origin.y
+//        let labelh = headerLabel.frame.height
+//        print("--")
+//        print("Label y: \(labely)")
+//        print("Label h: \(labelh)")
+//        print("= \(labely - labelh / 2)")
+//        print("_______________")
+//        print(headerLabelVerticalCenter)
+//        print(offset_B_LabelHeader - 20 - offset)
+//        print(max(-(headerLabelVerticalCenter), offset_B_LabelHeader - 20 - offset))
         
-        var labely = headerLabel.frame.origin.y
-        var labelh = headerLabel.frame.height
-        print("--")
-        print("Label y: \(labely)")
-        print("Label h: \(labelh)")
-        print("= \(labely - labelh / 2)")
-        print("_______________")
-        print(headerLabelVerticalCenter)
-        print(offset_B_LabelHeader - 20 - offset)
-        print(max(-(headerLabelVerticalCenter), offset_B_LabelHeader - 20 - offset))
         
     }
     
     func logViewHierarchy(view: UIView, num: Int) {
         
-        var index = num
-        var chars: String = String()
-        for i in 0..<index {
-            chars = chars + "_"
-        }
+        let chars = String(count: num, repeatedValue: Character("_"))
         
-        index = index + 2
         print("\(chars) \(NSStringFromClass(view.dynamicType)) userInteractionEnabled: \(view.userInteractionEnabled)")
         for subview in view.subviews {
-            self.logViewHierarchy(subview, num: index)
+            self.logViewHierarchy(subview, num: num + 2)
         }
     }
     
