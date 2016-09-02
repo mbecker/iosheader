@@ -2,4 +2,85 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSHeader/MapTableView.swift"
+            timestampString = "494442844.998957"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "MapTableView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOSHeader.MapTableView.__deallocating_deinit"
+                  moduleName = "iOSHeader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mbecker/apps/ios/iOSHeader/iOSHeader/MapTableView.swift"
+                  timestampString = "494442846.735914"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOSHeader.MapTableView.init (frame : __C.CGRect, style : __C.UITableViewStyle) -&gt; iOSHeader.MapTableView"
+                  moduleName = "iOSHeader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mbecker/apps/ios/iOSHeader/iOSHeader/MapTableView.swift"
+                  timestampString = "494442846.737155"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOSHeader.MapTableView.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;iOSHeader.MapTableView&gt;"
+                  moduleName = "iOSHeader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mbecker/apps/ios/iOSHeader/iOSHeader/MapTableView.swift"
+                  timestampString = "494442846.737248"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSHeader/MapViewCell.swift"
+            timestampString = "494530341.661217"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "MapViewCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

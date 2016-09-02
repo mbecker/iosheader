@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		842EB220EBBF87C2E29D07A8 /* Pods_iOSHeader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FCAF637477C8BEF5635619 /* Pods_iOSHeader.framework */; };
+		D12D95901D78A54200B3493B /* MapViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12D958F1D78A54200B3493B /* MapViewCell.swift */; };
 		D14324521D71CC7C00FF7F55 /* UIViewWithBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14324511D71CC7C00FF7F55 /* UIViewWithBorders.swift */; };
 		D15B9CE61D70F5FD00B3EE49 /* IconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15B9CE51D70F5FD00B3EE49 /* IconImageView.swift */; };
 		D15B9CE81D70F84D00B3EE49 /* RoundRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15B9CE71D70F84D00B3EE49 /* RoundRectView.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		06FCAF637477C8BEF5635619 /* Pods_iOSHeader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSHeader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DC7424D6284E6FF38E16A0 /* Pods-iOSHeader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSHeader.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSHeader/Pods-iOSHeader.release.xcconfig"; sourceTree = "<group>"; };
+		D12D958F1D78A54200B3493B /* MapViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewCell.swift; sourceTree = "<group>"; };
 		D14324511D71CC7C00FF7F55 /* UIViewWithBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewWithBorders.swift; sourceTree = "<group>"; };
 		D15B9CE51D70F5FD00B3EE49 /* IconImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImageView.swift; sourceTree = "<group>"; };
 		D15B9CE71D70F84D00B3EE49 /* RoundRectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRectView.swift; sourceTree = "<group>"; };
@@ -95,6 +97,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D15796241D7895FC0045FFA1 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				D16BC2A61D723127005AECFA /* MapViewController.swift */,
+				D12D958F1D78A54200B3493B /* MapViewCell.swift */,
+			);
+			name = MapView;
+			sourceTree = "<group>";
+		};
 		DA28BEAC1A5F023100D8F599 = {
 			isa = PBXGroup;
 			children = (
@@ -117,10 +128,10 @@
 		DA28BEB71A5F023100D8F599 /* iOSHeader */ = {
 			isa = PBXGroup;
 			children = (
-				DAC4380C1A65D9C300EAB0DA /* Helpers */,
 				DA28BEBE1A5F023100D8F599 /* Main.storyboard */,
+				D15796241D7895FC0045FFA1 /* MapView */,
+				DAC4380C1A65D9C300EAB0DA /* Helpers */,
 				DA28BEBC1A5F023100D8F599 /* ViewController.swift */,
-				D16BC2A61D723127005AECFA /* MapViewController.swift */,
 				DA28BEC11A5F023100D8F599 /* Images.xcassets */,
 				DA28BEB81A5F023100D8F599 /* Supporting Files */,
 			);
@@ -287,6 +298,7 @@
 				DA28BEBD1A5F023100D8F599 /* ViewController.swift in Sources */,
 				DA28BEBB1A5F023100D8F599 /* AppDelegate.swift in Sources */,
 				D15B9CE81D70F84D00B3EE49 /* RoundRectView.swift in Sources */,
+				D12D95901D78A54200B3493B /* MapViewCell.swift in Sources */,
 				D1DD2CCC1D75D74300789B36 /* OrientationHelper.swift in Sources */,
 				D15B9CE61D70F5FD00B3EE49 /* IconImageView.swift in Sources */,
 			);
